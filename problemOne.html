@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Problem 1 Solution by VijayN</title>
+        <link rel="stylesheet" href="./style1.css" />
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>S.N.</th>
+                <th>Col1</th>
+                <th>Col2</th>
+                <th>Col1 + Col2</th>
+                <th>
+                    <button id="plusBtn">+</button>&nbsp;/
+                    <button id="minusBtn">-</button>
+                </th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>
+                    <input
+                        type="text"
+                        placeholder="insert value 1"
+                        class="val1"
+                    />
+                </td>
+                <td>
+                    <input
+                        type="text"
+                        placeholder="insert value 2"
+                        class="val2"
+                    />
+                </td>
+                <td id="result_value"></td>
+                <td onclick="deleteRow(this)">
+                    <input type="button" value="Delete" />
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>
+                    <input
+                        type="text"
+                        placeholder="insert value 1"
+                        class="val1"
+                    />
+                </td>
+                <td>
+                    <input
+                        type="text"
+                        placeholder="insert value 2"
+                        class="val2"
+                    />
+                </td>
+                <td id="result_value"></td>
+                <td onclick="deleteRow(this)">
+                    <input type="button" value="Delete" />
+                </td>
+            </tr>
+        </table>
+        <script src="./scriptOne.js"></script>
+    </body>
+</html>
