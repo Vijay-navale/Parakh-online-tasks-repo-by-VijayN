@@ -1,46 +1,46 @@
-//adding row
-const addRow = () => {
-    
-    html = `<tr>
-                <td>1</td>
-                <td><input type="text" placeholder="insert value 1" class="val1"></td>
-                <td><input type="text" placeholder="insert value 2" class="val2"></td>
-                <td id="result_value"></td>
-                <td onclick="deleteRow(this)"><input type="button" value="Delete"></td>
-            </tr>`;
-    table.insertAdjacentHTML('beforeend', html);
+const plusBtn = document.getElementById('plus');
+const minusBtn = document.getElementById('minus');
+const tbody = document.getElementById('tbody');
+
+// adding row
+const addRow = (e) => {
+    let tr = document.createElement('tr');
+    tr.innerHTML = `
+            <td>
+                <input id='i1' class='i1' type="number" placeholder="number 1">
+            </td>
+            <td>
+                <input id='i2' class='i2' type="number" placeholder="number 2">
+            </td>
+            <td class='answer'>
+                <span id="answer"></span>
+            </td>
+            <td></td>
+                `;
+    tbody.appendChild(tr);
 };
 
-//delete rows
-const deleteRow = (row) => {
-    const index = row.parentNode.rowIndex;
-    table.deleteRow(index);
+//remove row
+const removeRow = (e) => {
+    tbody.removeChild(tbody.lastElementChild);
 };
 
-//addvalues
-const addValues = (valTwoInput) => {
-    const inputValueOne = parseInt(valueOne.value);
-    const inputValueTwo = parseInt(valueTwo.value);
-    const result = inputValueOne + inputValueTwo;
-    resultValue.textContent = result;
-    
+//doing add operation
+const doOperation = (e) => {
+    if (e.target.classList.contains('i2')) {
+        console.log(e.composedPath());
+        const i1Value =
+            e.target.parentElement.previousElementSibling.firstElementChild
+                .value;
+        e.target.addEventListener('input', () => {
+            const answer = parseInt(e.target.value) + parseInt(i1Value);
+            const answerEl =
+                e.target.parentElement.nextElementSibling.firstElementChild;
+            answerEl.textContent = answer;
+        });
+    }
 };
 
-// selectors
-const table = document.querySelector('table');
-const plusBtn = document.getElementById('plusBtn');
-const minusBtn = document.getElementById('minusBtn');
-const valueOne = document.querySelector('.val1');
-const valueTwo = document.querySelector('.val2');
-const resultValue = document.getElementById('result_value');
-
-
-//event listners
-plusBtn.addEventListener('click', () => {
-    addRow();
-});
-
-valueTwo.addEventListener('change', () => {
-    addValues();
-});
-
+plusBtn.addEventListener('click', addRow);
+minusBtn.addEventListener('click', removeRow);
+tbody.addEventListener('click', doOperation);

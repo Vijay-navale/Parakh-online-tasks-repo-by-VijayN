@@ -1,5 +1,5 @@
 *{
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 body{
     display: flex;
@@ -10,5 +10,23 @@ body{
     background-color: rgb(241, 234, 224);
 }
 table{
-    box-shadow: 5px 10px 18px;
+    box-shadow: 1px 2px 11px;
+}
+.plus, .minus{
+    cursor: pointer;
+}
+.i1, .i2{
+    border: none;
+    padding: 3px 7px;
+}
+
+.i1:focus, .i2:focus{
+    outline: none;
+    border: none;
+}
+td, th{
+    padding: 5px 10px;
+}
+.answer{
+    text-align: center;
 }

@@ -7,60 +7,47 @@
         <link rel="stylesheet" href="./style1.css" />
     </head>
     <body>
-        <table>
-            <tr>
-                <th>S.N.</th>
-                <th>Col1</th>
-                <th>Col2</th>
-                <th>Col1 + Col2</th>
-                <th>
-                    <button id="plusBtn">+</button>&nbsp;/
-                    <button id="minusBtn">-</button>
-                </th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>
-                    <input
-                        type="text"
-                        placeholder="insert value 1"
-                        class="val1"
-                    />
-                </td>
-                <td>
-                    <input
-                        type="text"
-                        placeholder="insert value 2"
-                        class="val2"
-                    />
-                </td>
-                <td id="result_value"></td>
-                <td onclick="deleteRow(this)">
-                    <input type="button" value="Delete" />
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>
-                    <input
-                        type="text"
-                        placeholder="insert value 1"
-                        class="val1"
-                    />
-                </td>
-                <td>
-                    <input
-                        type="text"
-                        placeholder="insert value 2"
-                        class="val2"
-                    />
-                </td>
-                <td id="result_value"></td>
-                <td onclick="deleteRow(this)">
-                    <input type="button" value="Delete" />
-                </td>
-            </tr>
-        </table>
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Input One</th>
+                        <th>Input Two</th>
+                        <th>Addition Answer</th>
+                        <th>
+                            <span id="plus" class="plus">➕</span> / <span class="minus" id="minus">➖</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <!-- <tr>
+                        <td>
+                            <input type="number" placeholder="number 1">
+                        </td>
+                        <td>
+                            <input type="number" placeholder="number 2">
+                        </td>
+                        <td>
+                            <span id="answer"></span>
+                        </td>
+                        <td></td>
+                    </tr>        -->
+                    <!-- <tr>
+                        <td>
+                            <input type="number" placeholder="number 1">
+                        </td>
+                        <td>
+                            <input type="number" placeholder="number 2">
+                        </td>
+                        <td>
+                            <span id="answer"></span>
+                        </td>
+                        <td></td>
+                    </tr>        -->
+                </tbody>
+
+            </table>
+        </div>
         <script src="./scriptOne.js"></script>
     </body>
 </html>
